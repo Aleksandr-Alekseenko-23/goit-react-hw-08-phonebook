@@ -42,7 +42,7 @@ function Contacs() {
                 <Button
                   type="button"
                   onClick={() => {
-                    dispatch(deleteContacts(id));
+                    dispatch(deleteContacts({ id }));
                   }}
                 >
                   <Img src={Delete} alt="Delete" />

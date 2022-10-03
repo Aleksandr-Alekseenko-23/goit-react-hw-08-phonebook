@@ -1,6 +1,6 @@
-import AddForm from '../AddForm/AddForm';
-import Contacs from '../Contacts/Contacs';
-import FilterContact from '../FilterContact/FilterContact';
+import AddForm from '../../components/AddForm/AddForm';
+import Contacs from '../../components/Contacts/Contacs';
+import FilterContact from '../../components/FilterContact/FilterContact';
 import { TitleOne, Wrapper, WrapperContact } from './PhoneBook.styled.js';
 
 export const PhoneBook = () => {
