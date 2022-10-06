@@ -11,7 +11,12 @@ export const LinkHome = styled(NavLink)`
   width: 100%;
 
   &.active {
-    color: red;
+    color: orange;
+  }
+
+  &:hover,
+  &:active {
+    color: orange;
   }
 `;
 

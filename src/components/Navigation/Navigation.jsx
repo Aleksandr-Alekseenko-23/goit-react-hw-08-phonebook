@@ -5,7 +5,7 @@ export const Navigation = () => {
     <nav>
       <List>
         <Item>
-          <LinkHome to="contacts">Phonebook</LinkHome>
+          <LinkHome to="contacts">Contacts</LinkHome>
         </Item>
       </List>
     </nav>

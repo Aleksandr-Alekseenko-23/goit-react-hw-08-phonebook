@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InputPhoneBook = styled.input`
   background-color: white;
-  width: 500px;
+  width: 600px;
   height: 35px;
   border: none;
   outline: none;
@@ -14,7 +14,6 @@ export const InputPhoneBook = styled.input`
   &::placeholder {
     font-size: 24px;
     color: orange;
-    padding-left: 20px;
   }
 `;
 
@@ -23,6 +22,6 @@ export const LabelPhoneBook = styled.label`
   gap: 15px;
   flex-direction: column;
 
-  color: orange;
+  color: white;
   font-size: 24px;
 `;

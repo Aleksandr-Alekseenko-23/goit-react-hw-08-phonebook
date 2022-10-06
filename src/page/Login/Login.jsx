@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { login } from 'redux/authOperations';
 import { TitleOne } from '../PhoneBook/PhoneBook.styled.js';
 import {
@@ -25,11 +26,13 @@ const Login = () => {
     }
   };
 
+  const navigate = useNavigate();
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(login({ email, password }));
     setEmail('');
     setPassword('');
+    navigate('/contacts');
   };
 
   return (

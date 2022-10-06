@@ -24,3 +24,34 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: orange;
 }
+
+.Logo {
+  fill: orange;
+  width: 20px;
+  height: 20px;
+}
+
+.Link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Link:hover .Logo,
+.Link:focus .Logo {
+  background-color: orange;
+  fill: white;
+}
+
+.Link:hover,
+.Link:focus {
+  background-color: orange;
+}

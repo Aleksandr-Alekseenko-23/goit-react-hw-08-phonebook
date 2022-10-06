@@ -1,3 +1,4 @@
+import { ToastContainer } from 'react-toastify';
 import AddForm from '../../components/AddForm/AddForm';
 import Contacs from '../../components/Contacts/Contacs';
 import FilterContact from '../../components/FilterContact/FilterContact';
@@ -7,6 +8,7 @@ export const PhoneBook = () => {
   return (
     <>
       <TitleOne>Phonebook</TitleOne>
+      <ToastContainer autoClose={3000} />
       <Wrapper>
         <AddForm />
         <WrapperContact>

@@ -15,15 +15,19 @@ export const Item = styled.li`
   font-size: 24px;
   color: orange;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin-bottom: 15px;
+  border-top: solid 1px orange;
+  padding: 5px;
+
+  &:last-child {
+    border-bottom: solid 1px orange;
+  }
 `;
 
 export const Span = styled.span`
   font-size: 24px;
   color: orange;
-  padding-left: 20px;
+  width: 250px;
 `;
 
 export const Img = styled.img`
@@ -35,4 +39,13 @@ export const Button = styled.button`
   background-color: rgba(28, 28, 28, 0);
   border-color: red;
   cursor: pointer;
+`;
+
+export const AvatarWrappen = styled.div`
+  width: 50px;
+`;
+
+export const TextPib = styled.p`
+  width: 250px;
+  margin: 0;
 `;

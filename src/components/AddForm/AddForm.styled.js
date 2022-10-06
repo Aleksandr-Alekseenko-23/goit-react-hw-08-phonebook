@@ -29,7 +29,7 @@ export const LabelPhoneBook = styled.label`
   gap: 15px;
   flex-direction: column;
 
-  color: orange;
+  color: white;
   font-size: 24px;
 `;
 

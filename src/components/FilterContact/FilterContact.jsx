@@ -1,8 +1,8 @@
 import React from 'react';
-import { InputPhoneBook, LabelPhoneBook } from './FilterContact.styled.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsersFilter } from '../../redux/selectors';
 import { filterUsers } from 'redux/filtersSlice.js';
+import { InputPhoneBook, LabelPhoneBook } from './FilterContact.styled.js';
 
 function FilterContact() {
   const dispatch = useDispatch();

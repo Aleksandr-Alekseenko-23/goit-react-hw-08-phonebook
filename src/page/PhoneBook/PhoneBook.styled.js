@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const TitleOne = styled.h1`
-  font-size: 100px;
+  font-size: 72px;
   font-weight: bold;
-  color: orange;
+  color: white;
   text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
 `;
 
 export const Wrapper = styled.div`
