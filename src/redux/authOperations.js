@@ -1,42 +1,42 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import * as accessToken from '../utils/accessToken';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-    // accessToken.set(`Bearer ${token}`);
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
-    // accessToken.remove();
   },
 };
 
 export const register = createAsyncThunk(
   'auth/register',
-  async (credentials, thunkAPI) => {
+  async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/signup', credentials);
+      console.log('postRegistr', data);
       token.set(data.token);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return rejectWithValue(toast.error('Incorrectly entered data'));
     }
   }
 );
 
 export const login = createAsyncThunk(
   'auth/login',
-  async (credentials, thunkAPI) => {
+  async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/login', credentials);
       token.set(data.token);
+      console.log('postLogin', data);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return rejectWithValue(toast.error('Incorrectly entered data'));
     }
   }
 );

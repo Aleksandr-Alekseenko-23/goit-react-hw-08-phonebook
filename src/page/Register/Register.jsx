@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import { register } from 'redux/authOperations';
 import { TitleOne } from '../PhoneBook/PhoneBook.styled.js';
 import {
@@ -39,6 +40,7 @@ const Register = () => {
   return (
     <div>
       <TitleOne>Registration page</TitleOne>
+      <ToastContainer autoClose={3000} />
       <FormRegister onSubmit={handleSubmit} autoComplete="off">
         <LabelRegister>
           Name

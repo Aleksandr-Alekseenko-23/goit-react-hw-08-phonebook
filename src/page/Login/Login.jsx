@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import { login } from 'redux/authOperations';
 import { TitleOne } from '../PhoneBook/PhoneBook.styled.js';
 import {
@@ -38,6 +39,7 @@ const Login = () => {
   return (
     <div>
       <TitleOne>Login page</TitleOne>
+      <ToastContainer autoClose={3000} />
       <FormRegister onSubmit={handleSubmit} autoComplete="off">
         <LabelRegister>
           Email
