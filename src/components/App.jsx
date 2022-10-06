@@ -27,8 +27,8 @@ export const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (pathname === '/goit-react-hw-08-phonebook/') {
-      navigate('login');
+    if (pathname === '/') {
+      navigate('/login');
     }
   }, [navigate, pathname]);
 
@@ -62,6 +62,14 @@ export const App = () => {
                   <PrivateRoute>
                     <PhoneBookLazy />
                   </PrivateRoute>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <PublicRoute restricted>
+                    <LoginLazy />
+                  </PublicRoute>
                 }
               />
             </Routes>
