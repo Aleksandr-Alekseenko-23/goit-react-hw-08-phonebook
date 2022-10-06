@@ -8,9 +8,8 @@ import { PrivateRoute } from 'components/privatPublicRoute/PrivateRoute';
 import { PublicRoute } from 'components/privatPublicRoute/PubllicRoute';
 import { selectIsFetchingCurrent } from 'redux/selectors';
 import Loader from './Loader/Loader';
-import Footer from 'components/Footer/Footer';
 import Main from './Main/Main';
-import Container from './Container/Container';
+import Footer from './Footer/Footer';
 
 export const App = () => {
   const navigate = useNavigate();
@@ -28,7 +27,7 @@ export const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (pathname === '/goit-react-hw-08-phonebook' || '/') {
+    if (pathname === '/') {
       navigate('contacts');
     }
   }, [navigate, pathname]);
@@ -36,40 +35,39 @@ export const App = () => {
   return (
     <>
       <AppBar />
-      <Container>
-        <Main>
-          <Suspense fallback={<Loader />}>
-            {!isFetchingCurrent && (
-              <Routes>
-                <Route
-                  path="/register"
-                  element={
-                    <PublicRoute restricted>
-                      <RegisterLazy />
-                    </PublicRoute>
-                  }
-                />
-                <Route
-                  path="/login"
-                  element={
-                    <PublicRoute restricted>
-                      <LoginLazy />
-                    </PublicRoute>
-                  }
-                />
-                <Route
-                  path="/contacts"
-                  element={
-                    <PrivateRoute>
-                      <PhoneBookLazy />
-                    </PrivateRoute>
-                  }
-                />
-              </Routes>
-            )}
-          </Suspense>
-        </Main>
-      </Container>
+
+      <Main>
+        <Suspense fallback={<Loader />}>
+          {!isFetchingCurrent && (
+            <Routes>
+              <Route
+                path="/register"
+                element={
+                  <PublicRoute restricted>
+                    <RegisterLazy />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <PublicRoute restricted>
+                    <LoginLazy />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/contacts"
+                element={
+                  <PrivateRoute>
+                    <PhoneBookLazy />
+                  </PrivateRoute>
+                }
+              />
+            </Routes>
+          )}
+        </Suspense>
+      </Main>
       <Footer />
     </>
   );
