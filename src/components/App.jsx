@@ -27,8 +27,8 @@ export const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (pathname === '/') {
-      navigate('contacts');
+    if (pathname === '/goit-react-hw-08-phonebook') {
+      navigate('login');
     }
   }, [navigate, pathname]);
 
