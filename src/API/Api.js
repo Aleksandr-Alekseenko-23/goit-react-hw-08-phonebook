@@ -13,4 +13,11 @@ export const UsersApi = {
     const { data } = await axios.delete(`/contacts/${id}`);
     return data;
   },
+  async updateContact(contact) {
+    const { data } = await axios.patch(`/contacts/${contact.id}`, {
+      name: contact.name,
+      number: contact.number,
+    });
+    return data;
+  },
 };

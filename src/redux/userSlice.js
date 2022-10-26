@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getContacts, addContacts, deleteContacts } from './usersOperations';
+import {
+  getContacts,
+  addContacts,
+  deleteContacts,
+  updateContacts,
+} from './usersOperations';
 
 const userSlice = createSlice({
   name: 'contacts',
@@ -56,6 +61,20 @@ const userSlice = createSlice({
       isLoading: false,
       error: action.payload,
     }),
+    [updateContacts.pending]: state => {
+      state.isLoading = true;
+    },
+    [updateContacts.fulfilled]: (state, { payload }) => {
+      const index = state.contacts.findIndex(
+        contact => contact.id === payload.id
+      );
+      state.contacts[index] = payload;
+      state.isLoading = false;
+    },
+    [updateContacts.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
+    },
   },
 });
 

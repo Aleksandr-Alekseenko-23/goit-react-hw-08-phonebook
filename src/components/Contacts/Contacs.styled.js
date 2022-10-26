@@ -31,14 +31,20 @@ export const Span = styled.span`
 `;
 
 export const Img = styled.img`
-  width: 15px;
+  width: 20px;
 `;
 
-export const Button = styled.button`
+export const ButtonDelete = styled.button`
   width: 30px;
-  background-color: rgba(28, 28, 28, 0);
+  background-color: white;
+  padding: 0;
   border-color: red;
   cursor: pointer;
+`;
+
+export const ButtonEdit = styled(ButtonDelete)`
+  border-color: orange;
+  margin-right: 5px;
 `;
 
 export const AvatarWrappen = styled.div`

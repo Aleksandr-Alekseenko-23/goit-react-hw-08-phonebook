@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from 'react-avatar';
 import {
@@ -6,12 +6,14 @@ import {
   Wrapper,
   Item,
   Span,
-  Button,
+  ButtonDelete,
+  ButtonEdit,
   Img,
   AvatarWrappen,
   TextPib,
 } from './Contacs.styled.js';
 import Delete from './../../Assets/img/Delete.svg';
+import Edit from './../../Assets/img/pen.png';
 import { deleteContacts, getContacts } from '../../redux/usersOperations';
 import {
   getUsers,
@@ -22,15 +24,18 @@ import {
   getToken,
 } from '../../redux/selectors';
 import Loader from 'components/Loader/Loader.jsx';
+import { UpdateContactsForm } from '../UpdateContactsForm/UpdateContactsForm';
 
 function Contacs() {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
   const contacts = useSelector(getUsers);
-  const filter = useSelector(getUsersFilter);
+  const userFilter = useSelector(getUsersFilter);
   const isLoggedIn = useSelector(getIsLoggetIn);
   const token = useSelector(getToken);
+
+  const [contactToUpdate, setContactToUpdate] = useState(null);
 
   useEffect(() => {
     token && isLoggedIn && dispatch(getContacts());
@@ -38,8 +43,17 @@ function Contacs() {
 
   const filterContactsFunction = () => {
     return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(filter.toLowerCase())
+      name.toLowerCase().includes(userFilter.toLowerCase())
     );
+  };
+
+  const showUpdateForm = userId => {
+    const contact = contacts.find(({ id }) => id === userId);
+    setContactToUpdate(contact);
+  };
+
+  const closeForm = () => {
+    setContactToUpdate(null);
   };
 
   return (
@@ -56,14 +70,27 @@ function Contacs() {
                 </AvatarWrappen>
                 <TextPib> {name}</TextPib>
                 <Span>{number}</Span>
-                <Button
+                <ButtonEdit
+                  onClick={() => {
+                    showUpdateForm(id);
+                  }}
+                >
+                  <Img src={Edit} alt="Edit" width="512" />
+                </ButtonEdit>
+                {contactToUpdate && contactToUpdate.id === id && (
+                  <UpdateContactsForm
+                    contactToUpdate={contactToUpdate}
+                    closeForm={closeForm}
+                  />
+                )}
+                <ButtonDelete
                   type="button"
                   onClick={() => {
                     dispatch(deleteContacts({ id }));
                   }}
                 >
                   <Img src={Delete} alt="Delete" />
-                </Button>
+                </ButtonDelete>
               </Item>
             );
           })}
