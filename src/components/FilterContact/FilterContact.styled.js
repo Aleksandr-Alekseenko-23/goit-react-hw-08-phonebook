@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const InputPhoneBook = styled.input`
   background-color: white;
-  width: 600px;
+  width: 678px;
   height: 35px;
   border: none;
   outline: none;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 24px;
   color: orange;
   padding-left: 20px;

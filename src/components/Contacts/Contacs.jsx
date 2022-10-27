@@ -11,6 +11,7 @@ import {
   Img,
   AvatarWrappen,
   TextPib,
+  Title,
 } from './Contacs.styled.js';
 import Delete from './../../Assets/img/Delete.svg';
 import Edit from './../../Assets/img/pen.png';
@@ -61,40 +62,47 @@ function Contacs() {
       {isLoading && contacts.length === 0 ? (
         <Loader />
       ) : (
-        <List>
-          {filterContactsFunction().map(({ name, number, id }) => {
-            return (
-              <Item key={id}>
-                <AvatarWrappen>
-                  <Avatar size="25" name={name} round={true} />
-                </AvatarWrappen>
-                <TextPib> {name}</TextPib>
-                <Span>{number}</Span>
-                <ButtonEdit
-                  onClick={() => {
-                    showUpdateForm(id);
-                  }}
-                >
-                  <Img src={Edit} alt="Edit" width="512" />
-                </ButtonEdit>
-                {contactToUpdate && contactToUpdate.id === id && (
-                  <UpdateContactsForm
-                    contactToUpdate={contactToUpdate}
-                    closeForm={closeForm}
-                  />
-                )}
-                <ButtonDelete
-                  type="button"
-                  onClick={() => {
-                    dispatch(deleteContacts({ id }));
-                  }}
-                >
-                  <Img src={Delete} alt="Delete" />
-                </ButtonDelete>
-              </Item>
-            );
-          })}
-        </List>
+        <>
+          {contacts.length > 0 && (
+            <>
+              <Title>Contacts</Title>
+              <List>
+                {filterContactsFunction().map(({ name, number, id }) => {
+                  return (
+                    <Item key={id}>
+                      <AvatarWrappen>
+                        <Avatar size="25" name={name} round={true} />
+                      </AvatarWrappen>
+                      <TextPib> {name}</TextPib>
+                      <Span>{number}</Span>
+                      <ButtonEdit
+                        onClick={() => {
+                          showUpdateForm(id);
+                        }}
+                      >
+                        <Img src={Edit} alt="Edit" width="512" />
+                      </ButtonEdit>
+                      {contactToUpdate && contactToUpdate.id === id && (
+                        <UpdateContactsForm
+                          contactToUpdate={contactToUpdate}
+                          closeForm={closeForm}
+                        />
+                      )}
+                      <ButtonDelete
+                        type="button"
+                        onClick={() => {
+                          dispatch(deleteContacts({ id }));
+                        }}
+                      >
+                        <Img src={Delete} alt="Delete" />
+                      </ButtonDelete>
+                    </Item>
+                  );
+                })}
+              </List>
+            </>
+          )}
+        </>
       )}
       {error && <p>{error}</p>}
     </Wrapper>

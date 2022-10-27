@@ -4,9 +4,9 @@ import { MainWrapper } from './Main.styled.js';
 
 function Main({ children }) {
   return (
-    <Container>
-      <MainWrapper>{children}</MainWrapper>;
-    </Container>
+    <MainWrapper>
+      <Container>{children}</Container>
+    </MainWrapper>
   );
 }
 

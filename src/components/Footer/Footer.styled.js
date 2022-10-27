@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { breakpoints } from '../Utils/Breakpoints';
 
 export const FooterWrappen = styled.footer`
   display: flex;
+  flex-shrink: 0;
   justify-content: space-between;
   border-top: 1px solid rgba(236, 236, 236, 1);
 `;
@@ -17,9 +19,13 @@ export const Wrapper = styled.div`
   font-size: 24px;
   font-weight: bold;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 44px;
+  @media ${breakpoints.desktop} {
+    flex-direction: row;
+  }
 `;
 
 export const Item = styled.li`

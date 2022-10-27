@@ -29,7 +29,7 @@ function Footer() {
                 height="30"
               />
             </LinkGoIT>
-            student Alieksieienko Oleksandr
+            student Alieksieienko O.
           </Wrapper>
           <List>
             <Item>

@@ -35,7 +35,6 @@ export const App = () => {
   return (
     <>
       <AppBar />
-
       <Main>
         <Suspense fallback={<Loader />}>
           {!isFetchingCurrent && (

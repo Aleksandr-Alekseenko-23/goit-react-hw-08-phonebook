@@ -3,12 +3,34 @@ import styled from 'styled-components';
 export const List = styled.ul`
   list-style: none;
   padding: 0;
+  margin: 0;
+  max-width: 700px;
+  max-height: 300px;
+  overflow: auto;
+  background-color: white;
+
+  &::-webkit-scrollbar {
+    width: 12px; /* ширина всей полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: white; /* цвет зоны отслеживания */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: orange; /* цвет бегунка */
+    border-radius: 20px; /* округлось бегунка */
+    border: 3px solid white; /* отступ вокруг бегунка */
+  }
+
+  scrollbar-width: thin; /* "auto" или "thin" */
+  scrollbar-color: orange white; /* цвет бегунка и зоны отслеживания */
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
-  min-height: 250px;
-  background-color: white;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
 `;
 
 export const Item = styled.li`
@@ -52,6 +74,13 @@ export const AvatarWrappen = styled.div`
 `;
 
 export const TextPib = styled.p`
-  width: 250px;
+  width: 320px;
+  margin: 0;
+`;
+
+export const Title = styled.h2`
+  color: white;
+  font-size: 24px;
+  font-weight: normal;
   margin: 0;
 `;
