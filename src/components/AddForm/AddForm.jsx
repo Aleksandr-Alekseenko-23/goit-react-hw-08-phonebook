@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
+// import useMatchMedia from 'hooks/useMatchMedia';
 import {
   FormPhoneBook,
   InputPhoneBook,
@@ -12,6 +13,7 @@ import { addContacts } from '../../redux/usersOperations';
 
 export const AddForm = () => {
   const dispatch = useDispatch();
+  // const { isMobile } = useMatchMedia();
 
   const onHandleSubmit = e => {
     e.preventDefault();
@@ -51,6 +53,16 @@ export const AddForm = () => {
       <Button type="submit">
         <img src={Icon} alt="Plus" />
       </Button>
+      {/* {isMobile && (
+        <StyledModalOpenIcon
+          onClick={() => {
+            openModal();
+          }}
+          aria-label="открыть модалку"
+        >
+          <StyledModalIcon src={addIcon} />
+        </StyledModalOpenIcon>
+      )} */}
     </FormPhoneBook>
   );
 };
