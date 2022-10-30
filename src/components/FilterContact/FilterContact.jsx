@@ -2,16 +2,34 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsersFilter, getUsers } from '../../redux/selectors';
 import { filterUsers } from 'redux/filtersSlice.js';
-import { InputPhoneBook, LabelPhoneBook } from './FilterContact.styled.js';
+import {
+  InputPhoneBook,
+  LabelPhoneBook,
+  Button,
+  ButtonImg,
+} from './FilterContact.styled.js';
+import useMatchMedia from 'hooks/useMatchMedia';
+import Icon from '../../Assets/img/plus.svg';
 
-function FilterContact() {
+function FilterContact({ openModal }) {
   const dispatch = useDispatch();
+  const { isMobile } = useMatchMedia();
   const filterValue = useSelector(getUsersFilter);
   const contacts = useSelector(getUsers);
   const handleFilterChange = ({ target: { value } }) =>
     dispatch(filterUsers(value));
   return (
     <>
+      {isMobile && (
+        <Button
+          onClick={() => {
+            openModal();
+          }}
+          aria-label="open modal"
+        >
+          <ButtonImg src={Icon} alt="Plus" />
+        </Button>
+      )}
       {contacts.length > 0 && (
         <div>
           <LabelPhoneBook>

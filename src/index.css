@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./Assets/img/BookshelfWallpaper.jpg);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
 }
 
 code {

@@ -12,6 +12,7 @@ import {
   AvatarWrappen,
   TextPib,
   Title,
+  TitleContact,
 } from './Contacs.styled.js';
 import Delete from './../../Assets/img/Delete.svg';
 import Edit from './../../Assets/img/pen.png';
@@ -26,9 +27,11 @@ import {
 } from '../../redux/selectors';
 import Loader from 'components/Loader/Loader.jsx';
 import { UpdateContactsForm } from '../UpdateContactsForm/UpdateContactsForm';
+import useMatchMedia from 'hooks/useMatchMedia/useMatchMedia.js';
 
 function Contacs() {
   const dispatch = useDispatch();
+  const { isMobile } = useMatchMedia();
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
   const contacts = useSelector(getUsers);
@@ -63,7 +66,7 @@ function Contacs() {
         <Loader />
       ) : (
         <>
-          {contacts.length > 0 && (
+          {contacts.length > 0 ? (
             <>
               <Title>Contacts</Title>
               <List>
@@ -71,7 +74,11 @@ function Contacs() {
                   return (
                     <Item key={id}>
                       <AvatarWrappen>
-                        <Avatar size="25" name={name} round={true} />
+                        {isMobile ? (
+                          <Avatar size="15" name={name} round={true} />
+                        ) : (
+                          <Avatar size="25" name={name} round={true} />
+                        )}
                       </AvatarWrappen>
                       <TextPib> {name}</TextPib>
                       <Span>{number}</Span>
@@ -101,6 +108,8 @@ function Contacs() {
                 })}
               </List>
             </>
+          ) : (
+            <TitleContact>Your contacts will be displayed here</TitleContact>
           )}
         </>
       )}

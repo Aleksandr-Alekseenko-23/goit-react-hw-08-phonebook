@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import { breakpoints } from '../../components/Utils/Breakpoints';
 
 export const TitleOne = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
   font-weight: bold;
   color: white;
   text-align: center;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  @media ${breakpoints.minTablet} {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
   @media ${breakpoints.desktop} {
     font-size: 72px;
   }
@@ -29,4 +33,11 @@ export const Wrapper = styled.div`
 export const WrapperContact = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const BackButton = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
 `;

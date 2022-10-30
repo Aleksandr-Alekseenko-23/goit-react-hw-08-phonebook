@@ -3,12 +3,13 @@ import { breakpoints } from '../Utils/Breakpoints';
 
 export const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 10px;
   justify-content: center;
   align-items: center;
 
-  @media ${breakpoints.desktop} {
-    flex-direction: column;
+  @media ${breakpoints.onlyTablet} {
+    flex-direction: row;
   }
 `;
 
@@ -22,19 +23,23 @@ export const FormPhoneBook = styled.form`
 
 export const InputPhoneBook = styled.input`
   background-color: white;
-  width: 323px;
+  min-width: 308px;
   height: 35px;
   border: none;
   outline: none;
-  font-size: 24px;
+  font-size: 18px;
   color: orange;
-  padding-left: 20px;
+  padding-left: 10px;
 
   &::placeholder {
     font-size: 24px;
     color: orange;
   }
-
+  @media ${breakpoints.minTablet} {
+    width: 323px;
+    padding-left: 20px;
+    font-size: 24px;
+  }
   @media ${breakpoints.desktop} {
     width: 448px;
   }

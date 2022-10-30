@@ -18,6 +18,7 @@ export const App = () => {
   const RegisterLazy = lazy(() => import('page/Register/Register'));
   const LoginLazy = lazy(() => import('page/Login/Login'));
   const PhoneBookLazy = lazy(() => import('../page/PhoneBook/PhoneBook'));
+  const PageNotFound = lazy(() => import('../page/NotFound/NotFound'));
 
   const isFetchingCurrent = useSelector(selectIsFetchingCurrent);
 
@@ -28,7 +29,7 @@ export const App = () => {
 
   useEffect(() => {
     if (pathname === '/') {
-      navigate('/login');
+      navigate('/contacts');
     }
   }, [navigate, pathname]);
 
@@ -66,8 +67,8 @@ export const App = () => {
               <Route
                 path="*"
                 element={
-                  <PublicRoute restricted>
-                    <LoginLazy />
+                  <PublicRoute>
+                    <PageNotFound />
                   </PublicRoute>
                 }
               />
