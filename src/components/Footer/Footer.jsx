@@ -9,95 +9,92 @@ import {
   LogoWrappen,
   LogoImg,
   LinkGoIT,
+  Button,
+  WrapperMob,
+  ListMob,
 } from './Footer.styled.js';
 import { ReactComponent as LinkedIn } from '../../Assets/img/linkedin.svg';
 import { ReactComponent as Github } from '../../Assets/img/github.svg';
 import useMatchMedia from 'hooks/useMatchMedia';
 import useToggleModal from 'hooks/useToggleModal/useToggleModal';
-import Modal from '../../components/Modal/Modal';
+import Modal from '../Modal/Modal';
 
 function Footer() {
   const { isMobile } = useMatchMedia();
-  const { isFooterOpen } = useToggleModal();
+  const { isFooterOpen, toggleFooterModal } = useToggleModal();
 
   return (
     <FooterWrappen>
       <Container>
         <LogoWrappen>
           <Logo />
-          {!isFooterOpen ? (
+
+          {!isMobile ? (
             <>
-              {!isMobile && (
-                <>
-                  <Wrapper>
-                    Made by
-                    <LinkGoIT href="https://goit.ua/">
-                      <LogoImg
-                        src="https://goit.ua/wp-content/themes/2/images/Layer.png"
-                        alt="логотип"
-                        width="100"
-                        height="30"
-                      />
-                    </LinkGoIT>
-                    student Alieksieienko O.
-                  </Wrapper>
-                  <List>
-                    <Item>
-                      <a className="Link" href="https://www.linkedin.com/feed/">
-                        <LinkedIn className="Logo" />
-                      </a>
-                    </Item>
-                    <Item>
-                      <a
-                        className="Link"
-                        href="https://github.com/Aleksandr-Alekseenko-23"
-                      >
-                        <Github className="Logo" />
-                      </a>
-                    </Item>
-                  </List>
-                </>
-              )}
+              <Wrapper>
+                Made by
+                <LinkGoIT href="https://goit.ua/">
+                  <LogoImg
+                    src="https://goit.ua/wp-content/themes/2/images/Layer.png"
+                    alt="логотип"
+                    width="100"
+                    height="30"
+                  />
+                </LinkGoIT>
+                student Alieksieienko O.
+              </Wrapper>
+              <List>
+                <Item>
+                  <a className="Link" href="https://www.linkedin.com/feed/">
+                    <LinkedIn className="Logo" />
+                  </a>
+                </Item>
+                <Item>
+                  <a
+                    className="Link"
+                    href="https://github.com/Aleksandr-Alekseenko-23"
+                  >
+                    <Github className="Logo" />
+                  </a>
+                </Item>
+              </List>
             </>
           ) : (
-            <Modal>
-              <>
-                {isMobile && (
-                  <>
-                    <Wrapper>
-                      Made by
-                      <LinkGoIT href="https://goit.ua/">
-                        <LogoImg
-                          src="https://goit.ua/wp-content/themes/2/images/Layer.png"
-                          alt="логотип"
-                          width="100"
-                          height="30"
-                        />
-                      </LinkGoIT>
-                      student Alieksieienko O.
-                    </Wrapper>
-                    <List>
-                      <Item>
-                        <a
-                          className="Link"
-                          href="https://www.linkedin.com/feed/"
-                        >
-                          <LinkedIn className="Logo" />
-                        </a>
-                      </Item>
-                      <Item>
-                        <a
-                          className="Link"
-                          href="https://github.com/Aleksandr-Alekseenko-23"
-                        >
-                          <Github className="Logo" />
-                        </a>
-                      </Item>
-                    </List>
-                  </>
-                )}
-              </>
-            </Modal>
+            <Button onClick={() => toggleFooterModal()}>Created</Button>
+          )}
+
+          {isMobile && isFooterOpen && (
+            <>
+              <Modal>
+                <WrapperMob>
+                  Made by
+                  <LinkGoIT href="https://goit.ua/">
+                    <LogoImg
+                      src="https://goit.ua/wp-content/themes/2/images/Layer.png"
+                      alt="логотип"
+                      width="100"
+                      height="30"
+                    />
+                  </LinkGoIT>
+                  student Alieksieienko O.
+                </WrapperMob>
+                <ListMob>
+                  <Item>
+                    <a className="Link" href="https://www.linkedin.com/feed/">
+                      <LinkedIn className="Logo" />
+                    </a>
+                  </Item>
+                  <Item>
+                    <a
+                      className="Link"
+                      href="https://github.com/Aleksandr-Alekseenko-23"
+                    >
+                      <Github className="Logo" />
+                    </a>
+                  </Item>
+                </ListMob>
+              </Modal>
+            </>
           )}
         </LogoWrappen>
       </Container>

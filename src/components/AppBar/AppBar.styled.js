@@ -10,3 +10,13 @@ export const Wrappen = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const Menu = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translatey(0);
+  transition: transform 3000ms;
+  top: 40px;
+  left: 0px;
+`;

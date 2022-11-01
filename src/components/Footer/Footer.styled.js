@@ -28,6 +28,12 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const WrapperMob = styled(Wrapper)`
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+`;
+
 export const Item = styled.li`
   display: inline-flex;
   justify-content: center;
@@ -60,4 +66,17 @@ export const List = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+export const ListMob = styled(List)`
+  justify-content: center;
+  padding: 0;
+`;
+
+export const Button = styled.button`
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-size: 16px;
 `;

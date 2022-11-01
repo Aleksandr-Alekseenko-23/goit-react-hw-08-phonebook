@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import { breakpoints } from '../Utils/Breakpoints';
+import backgroundColor from '../../Assets/img/background.png';
 
 export const ModalBackdrop = styled.div`
-  @media (${breakpoints.minTablet}) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(33, 33, 33, 0.12);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(${backgroundColor});
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ModalContent = styled.div`

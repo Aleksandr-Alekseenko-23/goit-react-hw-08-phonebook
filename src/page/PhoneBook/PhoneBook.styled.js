@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { breakpoints } from '../../components/Utils/Breakpoints';
 
 export const TitleOne = styled.h1`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: white;
   text-align: center;
