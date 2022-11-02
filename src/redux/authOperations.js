@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
+import { IoMdLogIn } from 'react-icons/io';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -18,8 +19,10 @@ export const register = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/signup', credentials);
-      console.log('postRegistr', data);
       token.set(data.token);
+      toast(`You are successfully logged in`, {
+        icon: <IoMdLogIn size={25} color="green" />,
+      });
       return data;
     } catch (error) {
       return rejectWithValue(toast.error('Incorrectly entered data'));
@@ -33,7 +36,9 @@ export const login = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/login', credentials);
       token.set(data.token);
-      console.log('postLogin', data);
+      toast(`You are successfully logged in`, {
+        icon: <IoMdLogIn size={25} color="green" />,
+      });
       return data;
     } catch (error) {
       return rejectWithValue(toast.error('Incorrectly entered data'));

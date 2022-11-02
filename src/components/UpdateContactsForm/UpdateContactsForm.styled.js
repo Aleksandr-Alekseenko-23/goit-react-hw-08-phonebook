@@ -70,6 +70,7 @@ export const ButtonSaveUpdate = styled(Button)`
 
 export const ButtonCloseModal = styled.button`
   position: absolute;
+  flex-shrink: 0;
   top: 0;
   right: 0;
   background-color: transparent;
