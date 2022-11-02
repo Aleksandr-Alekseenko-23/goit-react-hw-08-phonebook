@@ -19,10 +19,10 @@ export const register = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/signup', credentials);
-      token.set(data.token);
       toast(`You are successfully logged in`, {
         icon: <IoMdLogIn size={25} color="green" />,
       });
+      token.set(data.token);
       return data;
     } catch (error) {
       return rejectWithValue(toast.error('Incorrectly entered data'));
@@ -35,10 +35,10 @@ export const login = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/login', credentials);
-      token.set(data.token);
       toast(`You are successfully logged in`, {
         icon: <IoMdLogIn size={25} color="green" />,
       });
+      token.set(data.token);
       return data;
     } catch (error) {
       return rejectWithValue(toast.error('Incorrectly entered data'));
