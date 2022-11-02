@@ -3,7 +3,7 @@ import { breakpoints } from '../Utils/Breakpoints';
 
 export const InputPhoneBook = styled.input`
   background-color: white;
-  min-width: 308px;
+  min-width: 290px;
   height: 35px;
   border: none;
   outline: none;

@@ -5,7 +5,6 @@ export const Wrappen = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
 `;
 
 export const ButtonLogout = styled.button`
@@ -13,7 +12,7 @@ export const ButtonLogout = styled.button`
   background-color: transparent;
   font-size: 14px;
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 5px;
   width: 60px;
   height: 30px;
   border: solid 1px orange;
@@ -27,7 +26,7 @@ export const ButtonLogout = styled.button`
   }
 
   @media ${breakpoints.minTablet} {
-    margin-left: 20px;
+    margin-left: 10px;
     width: 120px;
     height: 54px;
     font-size: 24px;

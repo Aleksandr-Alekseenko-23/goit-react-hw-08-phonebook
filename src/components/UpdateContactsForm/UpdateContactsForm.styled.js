@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Button } from 'components/AddForm/AddForm.styled';
 import backgroundColor from '../../Assets/img/background.png';
+import { breakpoints } from '../Utils/Breakpoints';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -26,25 +27,40 @@ export const FormModal = styled.form`
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  width: 400px;
-  padding: 20px;
+  width: 280px;
+  padding: 10px;
   background: url(${backgroundColor});
   z-index: 100;
+
+  @media ${breakpoints.minTablet} {
+    width: 400px;
+    padding: 20px;
+  }
 `;
 
 export const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 5px;
+  margin-bottom: 10px;
   color: white;
+  font-size: 18px;
+  @media ${breakpoints.minTablet} {
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
 `;
 
 export const FormInput = styled.input`
   padding: 5px;
   margin: 0;
   color: orange;
-  font-size: 24px;
+  font-size: 18px;
+
+  @media ${breakpoints.minTablet} {
+    font-size: 24px;
+  }
 `;
 
 export const ButtonSaveUpdate = styled(Button)`

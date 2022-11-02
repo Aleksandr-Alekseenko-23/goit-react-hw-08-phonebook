@@ -8,6 +8,7 @@ import {
   Wrapper,
   WrapperContact,
   BackButton,
+  WrapperModal,
 } from './PhoneBook.styled.js';
 import useMatchMedia from 'hooks/useMatchMedia';
 import useToggleModal from 'hooks/useToggleModal/useToggleModal';
@@ -20,11 +21,6 @@ export const PhoneBook = () => {
     <>
       <TitleOne>Phonebook</TitleOne>
       <ToastContainer autoClose={3000} />
-      {isMobile && isOpen && (
-        <BackButton type="button" onClick={() => closeModal()}>
-          <IoReturnDownBackSharp color="white" size={40} />
-        </BackButton>
-      )}
       <Wrapper>
         {!isOpen ? (
           <>{!isMobile && <AddForm />}</>
@@ -32,7 +28,12 @@ export const PhoneBook = () => {
           <>
             {isMobile && (
               <Modal>
-                <AddForm />
+                <WrapperModal>
+                  <BackButton type="button" onClick={() => closeModal()}>
+                    <IoReturnDownBackSharp color="white" size={40} />
+                  </BackButton>
+                  <AddForm />
+                </WrapperModal>
               </Modal>
             )}
           </>

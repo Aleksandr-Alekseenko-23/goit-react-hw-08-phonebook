@@ -18,6 +18,9 @@ import { ReactComponent as Github } from '../../Assets/img/github.svg';
 import useMatchMedia from 'hooks/useMatchMedia';
 import useToggleModal from 'hooks/useToggleModal/useToggleModal';
 import Modal from '../Modal/Modal';
+import { ButtonCloseModal } from '../UpdateContactsForm/UpdateContactsForm.styled';
+import { Img } from '../Contacts/Contacs.styled';
+import Close from '../../Assets/img/Delete.svg';
 
 function Footer() {
   const { isMobile } = useMatchMedia();
@@ -66,6 +69,9 @@ function Footer() {
           {isMobile && isFooterOpen && (
             <>
               <Modal>
+                <ButtonCloseModal type="button" onClick={toggleFooterModal}>
+                  <Img src={Close} alt="Close" />
+                </ButtonCloseModal>
                 <WrapperMob>
                   Made by
                   <LinkGoIT href="https://goit.ua/">
@@ -80,7 +86,12 @@ function Footer() {
                 </WrapperMob>
                 <ListMob>
                   <Item>
-                    <a className="Link" href="https://www.linkedin.com/feed/">
+                    <a
+                      className="Link"
+                      href="https://www.linkedin.com/feed/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <LinkedIn className="Logo" />
                     </a>
                   </Item>
@@ -88,6 +99,8 @@ function Footer() {
                     <a
                       className="Link"
                       href="https://github.com/Aleksandr-Alekseenko-23"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <Github className="Logo" />
                     </a>

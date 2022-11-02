@@ -4,7 +4,7 @@ import backgroundColor from '../../Assets/img/background.png';
 
 export const ModalBackdrop = styled.div`
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   width: 100vw;
   height: 100vh;

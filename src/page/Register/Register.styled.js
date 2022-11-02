@@ -20,7 +20,8 @@ export const LabelRegister = styled.label`
 `;
 
 export const InputRegister = styled.input`
-  width: 308px;
+  min-width: 278px;
+  max-width: 400px;
   height: 50px;
   margin-top: 5px;
   border: none;

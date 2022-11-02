@@ -20,6 +20,7 @@ export const TitleOne = styled.h1`
 export const Wrapper = styled.div`
   display: flex;
   gap: 30px;
+  justify-content: center;
   @media ${breakpoints.onlyTablet} {
     flex-direction: column;
     align-items: center;
@@ -40,4 +41,10 @@ export const BackButton = styled.button`
   align-items: center;
   border: none;
   background-color: transparent;
+`;
+
+export const WrapperModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
