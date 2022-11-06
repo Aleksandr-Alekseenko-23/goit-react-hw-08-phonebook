@@ -46,6 +46,7 @@ export const Item = styled.li`
 
   &:last-child {
     margin-right: 0;
+    padding: 0;
   }
 `;
 
