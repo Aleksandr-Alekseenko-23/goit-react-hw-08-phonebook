@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { lazy, Suspense } from 'react';
 import AppBar from './AppBar/AppBar';
 import { fetchCurrentUser } from '../redux/Auth/AuthOperations';
-import { PrivateRoute } from './PrivatPublicRoute/PrivateRoute';
+import PrivateRoute from './PrivatPublicRoute/PrivateRoute';
 import { PublicRoute } from './PrivatPublicRoute/PubllicRoute';
 import { selectIsFetchingCurrent } from 'redux/Auth/AuthSelectors';
 import Loader from './Loader/Loader';
