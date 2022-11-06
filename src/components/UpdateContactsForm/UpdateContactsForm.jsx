@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateContacts } from '../../redux/usersOperations';
+import { updateContacts } from '../../redux/Contacts/ContactsOperations';
 import {
   Backdrop,
   FormModal,

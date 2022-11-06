@@ -1,23 +1,26 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUsersFilter, getUsers } from '../../redux/selectors';
-import { filterUsers } from 'redux/filtersSlice.js';
+import {
+  getContactsFilter,
+  getContactsState,
+} from '../../redux/Contacts/ContactsSelectors';
+import { filterContacts } from 'redux/Contacts/FiltersSlice.js';
 import {
   InputPhoneBook,
   LabelPhoneBook,
   Button,
   ButtonImg,
-} from './FilterContact.styled.js';
-import useMatchMedia from 'hooks/useMatchMedia';
+} from './FilterContactsForm.styled.js';
+import useMatchMedia from 'hooks/UseMatchMedia/Index';
 import Icon from '../../Assets/img/plus.svg';
 
-function FilterContact({ openModal }) {
+function FilterContactsForm({ openModal }) {
   const dispatch = useDispatch();
   const { isMobile } = useMatchMedia();
-  const filterValue = useSelector(getUsersFilter);
-  const contacts = useSelector(getUsers);
+  const filterValue = useSelector(getContactsFilter);
+  const contacts = useSelector(getContactsState);
   const handleFilterChange = ({ target: { value } }) =>
-    dispatch(filterUsers(value));
+    dispatch(filterContacts(value));
   return (
     <>
       {isMobile && (
@@ -31,7 +34,7 @@ function FilterContact({ openModal }) {
         </Button>
       )}
       {contacts.length > 0 && (
-        <div>
+        <>
           <LabelPhoneBook>
             Find contacts by name
             <InputPhoneBook
@@ -45,10 +48,10 @@ function FilterContact({ openModal }) {
               placeholder="Name"
             />
           </LabelPhoneBook>
-        </div>
+        </>
       )}
     </>
   );
 }
 
-export default FilterContact;
+export default FilterContactsForm;

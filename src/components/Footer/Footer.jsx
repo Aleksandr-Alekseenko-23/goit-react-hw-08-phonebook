@@ -15,8 +15,8 @@ import {
 } from './Footer.styled.js';
 import { ReactComponent as LinkedIn } from '../../Assets/img/linkedin.svg';
 import { ReactComponent as Github } from '../../Assets/img/github.svg';
-import useMatchMedia from 'hooks/useMatchMedia';
-import useToggleModal from 'hooks/useToggleModal/useToggleModal';
+import useMatchMedia from 'hooks/UseMatchMedia/Index';
+import useToggleModal from 'hooks/UseToggleModal/UseToggleModal';
 import Modal from '../Modal/Modal';
 import { ButtonCloseModal } from '../UpdateContactsForm/UpdateContactsForm.styled';
 import { Img } from '../Contacts/Contacs.styled';
@@ -74,7 +74,11 @@ function Footer() {
                 </ButtonCloseModal>
                 <WrapperMob>
                   Made by
-                  <LinkGoIT href="https://goit.ua/">
+                  <LinkGoIT
+                    href="https://goit.ua/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <LogoImg
                       src="https://goit.ua/wp-content/themes/2/images/Layer.png"
                       alt="логотип"

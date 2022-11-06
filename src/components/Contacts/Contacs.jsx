@@ -16,26 +16,28 @@ import {
 } from './Contacs.styled.js';
 import Delete from './../../Assets/img/Delete.svg';
 import Edit from './../../Assets/img/pen.png';
-import { deleteContacts, getContacts } from '../../redux/usersOperations';
 import {
-  getUsers,
-  getUsersFilter,
-  getIsLoading,
+  deleteContacts,
+  getContacts,
+} from '../../redux/Contacts/ContactsOperations';
+import {
+  getContactsState,
+  getContactsFilter,
   getError,
-  getIsLoggetIn,
-  getToken,
-} from '../../redux/selectors';
+  getIsLoading,
+} from '../../redux/Contacts/ContactsSelectors';
+import { getIsLoggetIn, getToken } from '../../redux/Auth/AuthSelectors';
 import Loader from 'components/Loader/Loader.jsx';
 import { UpdateContactsForm } from '../UpdateContactsForm/UpdateContactsForm';
-import useMatchMedia from 'hooks/useMatchMedia/useMatchMedia.js';
+import useMatchMedia from 'hooks/UseMatchMedia/UseMatchMedia.js';
 
 function Contacs() {
   const dispatch = useDispatch();
   const { isMobile } = useMatchMedia();
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
-  const contacts = useSelector(getUsers);
-  const userFilter = useSelector(getUsersFilter);
+  const contacts = useSelector(getContactsState);
+  const userFilter = useSelector(getContactsFilter);
   const isLoggedIn = useSelector(getIsLoggetIn);
   const token = useSelector(getToken);
 

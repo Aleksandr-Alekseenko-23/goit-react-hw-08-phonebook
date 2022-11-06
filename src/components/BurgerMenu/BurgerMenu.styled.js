@@ -6,10 +6,9 @@ export const Backdrop = styled.div`
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
-
   background: url(${backgroundColor});
-  z-index: 100;
 `;
+
 export const Main = styled.div`
   padding-top: 60px;
   padding-left: 20px;

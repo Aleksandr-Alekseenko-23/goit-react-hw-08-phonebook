@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import { logout } from 'redux/authOperations';
+import { logout } from 'redux/Auth/AuthOperations';
 import { ButtonLogout, Wrappen } from './UserMenu.styled.js';
 
 const UserMenu = () => {

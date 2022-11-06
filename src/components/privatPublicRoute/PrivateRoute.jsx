@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getIsLoggetIn } from '../../redux/selectors';
+import { getIsLoggetIn } from '../../redux/Auth/AuthSelectors';
 import { Navigate } from 'react-router-dom';
 
 export const PrivateRoute = ({ children }) => {

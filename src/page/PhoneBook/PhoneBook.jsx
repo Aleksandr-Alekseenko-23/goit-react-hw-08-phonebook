@@ -1,8 +1,7 @@
-import { ToastContainer } from 'react-toastify';
-import AddForm from '../../components/AddForm/AddForm';
-import Contacs from '../../components/Contacts/Contacs';
-import FilterContact from '../../components/FilterContact/FilterContact';
 import { IoReturnDownBackSharp } from 'react-icons/io5';
+import AddContactsForm from '../../components/AddContactsForm/AddContactsForm';
+import Contacs from '../../components/Contacts/Contacs';
+import FilterContactsForm from '../../components/FilterContactsForm/FilterContactsForm';
 import {
   TitleOne,
   Wrapper,
@@ -10,8 +9,8 @@ import {
   BackButton,
   WrapperModal,
 } from './PhoneBook.styled.js';
-import useMatchMedia from 'hooks/useMatchMedia';
-import useToggleModal from 'hooks/useToggleModal/useToggleModal';
+import useMatchMedia from 'hooks/UseMatchMedia/Index';
+import useToggleModal from 'hooks/UseToggleModal/UseToggleModal';
 import Modal from '../../components/Modal/Modal';
 
 export const PhoneBook = () => {
@@ -20,10 +19,9 @@ export const PhoneBook = () => {
   return (
     <>
       <TitleOne>Phonebook</TitleOne>
-      <ToastContainer autoClose={3000} />
       <Wrapper>
         {!isOpen ? (
-          <>{!isMobile && <AddForm />}</>
+          <>{!isMobile && <AddContactsForm />}</>
         ) : (
           <>
             {isMobile && (
@@ -32,14 +30,14 @@ export const PhoneBook = () => {
                   <BackButton type="button" onClick={() => closeModal()}>
                     <IoReturnDownBackSharp color="white" size={40} />
                   </BackButton>
-                  <AddForm />
+                  <AddContactsForm />
                 </WrapperModal>
               </Modal>
             )}
           </>
         )}
         <WrapperContact>
-          <FilterContact openModal={openModal} />
+          <FilterContactsForm openModal={openModal} />
           <Contacs />
         </WrapperContact>
       </Wrapper>

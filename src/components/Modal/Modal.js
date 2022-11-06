@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { ModalBackdrop, ModalContent } from './Modal.styled';
-import useMatchMedia from 'hooks/useMatchMedia';
+import useMatchMedia from 'hooks/UseMatchMedia/Index';
 
 const modalRoot = document.querySelector('#modal-root');
 

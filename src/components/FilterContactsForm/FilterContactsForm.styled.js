@@ -54,6 +54,6 @@ export const Button = styled.button`
 `;
 
 export const ButtonImg = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 47px;
+  height: 47px;
 `;

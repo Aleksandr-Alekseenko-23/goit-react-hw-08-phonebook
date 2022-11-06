@@ -22,13 +22,14 @@ export const LabelRegister = styled.label`
 export const InputRegister = styled.input`
   min-width: 278px;
   max-width: 400px;
-  height: 50px;
+  height: 60px;
   margin-top: 5px;
   border: none;
   outline: none;
   font-size: 18px;
-  color: orange;
+  color: ${props => (props.errors ? '#d32f2f' : 'orange')};
   padding-left: 10px;
+  padding-top: 0;
 
   @media ${breakpoints.minTablet} {
     width: 500px;
@@ -59,4 +60,23 @@ export const ButtonRegister = styled.button`
     height: 65px;
     font-size: 24px;
   }
+`;
+
+export const ErrorText = styled.span`
+  position: absolute;
+  color: #d32f2f;
+  font-size: 14px;
+  font-weight: 600;
+  bottom: 0;
+  padding-left: 10px;
+
+  @media ${breakpoints.minTablet} {
+    padding-left: 20px;
+  }
+`;
+
+export const Wrraper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
 `;

@@ -25,6 +25,11 @@ export const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      if (error.response.data.code === 11000) {
+        return rejectWithValue(
+          toast.error('This email address is already in use')
+        );
+      }
       return rejectWithValue(toast.error('Incorrectly entered data'));
     }
   }

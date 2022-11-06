@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { getToken } from '../../redux/selectors';
+import { getToken } from '../../redux/Auth/AuthSelectors';
 
 export const PublicRoute = ({ children, restricted = false }) => {
   const token = useSelector(getToken);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Backdrop, Main, StyledNavLink, List } from './BurgerMenu.styled';
 
-const BurgerMenu = ({ toggleMenu }) => {
+const BurgerMenu = ({ toggleMenu, mobileMenuIsOpen }) => {
   const handleBackdropClick = e => {
     if (e.target === e.currentTarget) {
       toggleMenu();

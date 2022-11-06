@@ -4,9 +4,9 @@ import {
   addContacts,
   deleteContacts,
   updateContacts,
-} from './usersOperations';
+} from './ContactsOperations';
 
-const userSlice = createSlice({
+const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
     contacts: [],
@@ -78,4 +78,4 @@ const userSlice = createSlice({
   },
 });
 
-export const usersReducer = userSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;

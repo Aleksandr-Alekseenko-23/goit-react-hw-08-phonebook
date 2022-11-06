@@ -1,1 +1,1 @@
-export { default } from './useToggleModal';
+export { default } from './UseToggleModal';

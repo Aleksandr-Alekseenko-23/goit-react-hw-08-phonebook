@@ -3,11 +3,11 @@ import { Navigation } from 'components/Navigation/Navigation';
 import { useSelector } from 'react-redux';
 import AuthNav from 'components/AuthNav/AuthNav';
 import UserMenu from 'components/UserMenu/UserMenu';
-import { getToken } from 'redux/selectors';
+import { getToken } from 'redux/Auth/AuthSelectors';
 import { HeaderWrappen, Wrappen, Menu } from './AppBar.styled.js';
 import Logo from '../Logo/Logo';
 import Container from 'components/Container/Container.js';
-import useMatchMedia from 'hooks/useMatchMedia';
+import useMatchMedia from 'hooks/UseMatchMedia/Index';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 const AppBar = () => {
@@ -43,7 +43,10 @@ const AppBar = () => {
 
       {isMobile && mobileMenuIsOpen && (
         <Menu>
-          <BurgerMenu toggleMenu={toggleMenu} />
+          <BurgerMenu
+            toggleMenu={toggleMenu}
+            mobileMenuIsOpen={mobileMenuIsOpen}
+          />
         </Menu>
       )}
     </HeaderWrappen>

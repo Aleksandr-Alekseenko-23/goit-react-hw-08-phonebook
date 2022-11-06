@@ -6,11 +6,11 @@ import {
   LabelPhoneBook,
   Button,
   Wrapper,
-} from './AddForm.styled.js';
+} from './AddContactsForm.styled.js';
 import Icon from './../../Assets/img/plus.svg';
-import { addContacts } from '../../redux/usersOperations';
+import { addContacts } from '../../redux/Contacts/ContactsOperations';
 
-export const AddForm = () => {
+export const AddContactsForm = () => {
   const dispatch = useDispatch();
 
   const onHandleSubmit = e => {
@@ -55,4 +55,4 @@ export const AddForm = () => {
   );
 };
 
-export default AddForm;
+export default AddContactsForm;

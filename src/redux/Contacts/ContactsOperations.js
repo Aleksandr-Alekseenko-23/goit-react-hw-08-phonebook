@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { UsersApi } from '../API/Api';
+import { UsersApi } from '../../api/Api';
 import { toast } from 'react-toastify';
 import { FcContacts } from 'react-icons/fc';
 

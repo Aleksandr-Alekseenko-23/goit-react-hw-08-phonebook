@@ -50,14 +50,15 @@ export const Item = styled.li`
 `;
 
 export const LogoImg = styled.img`
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 0;
+  display: block;
 `;
 
 export const LinkGoIT = styled.a`
-  margin: 0;
   padding: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  outline: none;
+  text-decoration: none;
 `;
 
 export const List = styled.ul`

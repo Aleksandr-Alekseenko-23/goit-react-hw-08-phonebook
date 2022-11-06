@@ -1,9 +1,14 @@
 import React from 'react';
 import { LinkHome, Item, List } from '../Navigation/Navigation.styled.js';
-import useMatchMedia from 'hooks/useMatchMedia';
-import { MobMenuButton } from './AuthNav.styled.js';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { TfiClose } from 'react-icons/tfi';
+import useMatchMedia from 'hooks/UseMatchMedia/Index';
+import {
+  MobMenuButton,
+  appearDuration,
+  MobMenuClose,
+  MobHamburgerMenuClose,
+} from './AuthNav.styled.js';
+
+import { CSSTransition } from 'react-transition-group';
 
 const AuthNav = ({ mobileMenuIsOpen, toggleMenu }) => {
   const { isMobile } = useMatchMedia();
@@ -25,11 +30,22 @@ const AuthNav = ({ mobileMenuIsOpen, toggleMenu }) => {
           aria-label="burger-menu"
           onClick={toggleMenu}
         >
-          {!mobileMenuIsOpen ? (
-            <GiHamburgerMenu color="white" size={24} />
-          ) : (
-            <TfiClose color="white" size={24} />
-          )}
+          <CSSTransition
+            in={mobileMenuIsOpen}
+            timeout={appearDuration}
+            classNames={{
+              enterActive: 'exampleEnter',
+              enterDone: 'exampleEnterActive',
+              exitActive: 'exampleExit',
+              exitDone: 'exampleActive',
+            }}
+          >
+            {!mobileMenuIsOpen ? (
+              <MobHamburgerMenuClose color="white" size={24} />
+            ) : (
+              <MobMenuClose color="white" size={24} />
+            )}
+          </CSSTransition>
         </MobMenuButton>
       )}
     </>

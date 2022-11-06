@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from 'components/AddForm/AddForm.styled';
+import { Button } from 'components/AddContactsForm/AddContactsForm.styled';
 import backgroundColor from '../../Assets/img/background.png';
 import { breakpoints } from '../Utils/Breakpoints';
 
