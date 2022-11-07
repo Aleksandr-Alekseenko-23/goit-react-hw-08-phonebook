@@ -7,7 +7,7 @@ import {
   Button,
   Wrapper,
 } from './AddContactsForm.styled.js';
-import Icon from './../../assets/img/plus.svg';
+import Icon from './../../Assets/img/plus.svg';
 import { addContacts } from '../../redux/Contacts/ContactsOperations';
 
 export const AddContactsForm = () => {

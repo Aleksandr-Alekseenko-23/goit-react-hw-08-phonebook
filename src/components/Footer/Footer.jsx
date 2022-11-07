@@ -13,14 +13,14 @@ import {
   WrapperMob,
   ListMob,
 } from './Footer.styled.js';
-import { ReactComponent as LinkedIn } from '../../assets/img/linkedin.svg';
-import { ReactComponent as Github } from '../../assets/img/github.svg';
+import { ReactComponent as LinkedIn } from '../../Assets/img/linkedin.svg';
+import { ReactComponent as Github } from '../../Assets/img/github.svg';
 import useMatchMedia from 'hooks/UseMatchMedia/Index';
 import useToggleModal from 'hooks/UseToggleModal/UseToggleModal';
 import Modal from '../Modal/Modal';
 import { ButtonCloseModal } from '../UpdateContactsForm/UpdateContactsForm.styled';
 import { Img } from '../Contacts/Contacs.styled';
-import Close from '../../assets/img/Delete.svg';
+import Close from '../../Assets/img/Delete.svg';
 
 function Footer() {
   const { isMobile } = useMatchMedia();

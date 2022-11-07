@@ -1,6 +1,6 @@
 import React from 'react';
 import { LogoText, Wrappen, TextColor, LogoImg } from './Logo.styled.js';
-import Phone from '../../assets/img/Phon.png';
+import Phone from '../../Assets/img/Phon.png';
 
 function Logo() {
   return (

@@ -12,7 +12,7 @@ import {
   ButtonImg,
 } from './FilterContactsForm.styled.js';
 import useMatchMedia from 'hooks/UseMatchMedia/Index';
-import Icon from '../../assets/img/plus.svg';
+import Icon from '../../Assets/img/plus.svg';
 
 function FilterContactsForm({ openModal }) {
   const dispatch = useDispatch();
