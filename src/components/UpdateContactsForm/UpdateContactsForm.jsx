@@ -10,8 +10,8 @@ import {
   ButtonCloseModal,
 } from './UpdateContactsForm.styled';
 import { Img } from 'components/Contacts/Contacs.styled';
-import Icon from '../../Assets/img/plus.svg';
-import Close from '../../Assets/img/Delete.svg';
+import Icon from '../../assets/img/plus.svg';
+import Close from '../../assets/img/Delete.svg';
 
 export const UpdateContactsForm = ({ contactToUpdate, closeForm }) => {
   const [name, setName] = useState(contactToUpdate.name);

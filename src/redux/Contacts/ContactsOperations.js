@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { UsersApi } from '../../api/Api';
+import { ContactsApi } from '../../contactsApi/Api';
 import { toast } from 'react-toastify';
 import { FcContacts } from 'react-icons/fc';
 
@@ -7,7 +7,7 @@ export const getContacts = createAsyncThunk(
   'contacts/getContacts',
   async (_, thunkAPI) => {
     try {
-      const response = await UsersApi.getContact();
+      const response = await ContactsApi.getContact();
       return response;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -19,7 +19,7 @@ export const addContacts = createAsyncThunk(
   'contacts/addContacts',
   async (contact, thunkAPI) => {
     try {
-      const response = await UsersApi.addContact(contact);
+      const response = await ContactsApi.addContact(contact);
       toast.success(`Contact successfully added to the list`, {
         icon: <FcContacts size={25} color="green" />,
       });
@@ -35,7 +35,7 @@ export const deleteContacts = createAsyncThunk(
   'contacts/deleteContacts',
   async ({ id }, thunkAPI) => {
     try {
-      await UsersApi.deleteContact(id);
+      await ContactsApi.deleteContact(id);
       toast.error(`Сontact successfully removed from the list`, {
         icon: <FcContacts size={25} color="red" />,
       });
@@ -51,7 +51,7 @@ export const updateContacts = createAsyncThunk(
   'contacts/updateContacts',
   async (contact, { rejectWithValue }) => {
     try {
-      await UsersApi.updateContact(contact);
+      await ContactsApi.updateContact(contact);
       toast.success(`Contact updated successfully`, {
         icon: <FcContacts size={25} color="green" />,
       });

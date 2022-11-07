@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { breakpoints } from '../../components/Utils/Breakpoints';
-import notFound from '../../Assets/img/not-found.jpg';
+import notFound from '../../assets/img/not-found.jpg';
 import { Link } from 'react-router-dom';
 
 export const StyledImage = styled.div`

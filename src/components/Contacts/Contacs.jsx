@@ -14,8 +14,8 @@ import {
   Title,
   TitleContact,
 } from './Contacs.styled.js';
-import Delete from './../../Assets/img/Delete.svg';
-import Edit from './../../Assets/img/pen.png';
+import Delete from './../../assets/img/Delete.svg';
+import Edit from './../../assets/img/pen.png';
 import {
   deleteContacts,
   getContacts,

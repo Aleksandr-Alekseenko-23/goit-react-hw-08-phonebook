@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { breakpoints } from '../Utils/Breakpoints';
-import backgroundColor from '../../Assets/img/background.png';
+import backgroundColor from '../../assets/img/background.png';
 
 export const ModalBackdrop = styled.div`
   position: fixed;

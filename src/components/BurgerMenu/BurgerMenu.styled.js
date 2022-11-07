@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import backgroundColor from '../../Assets/img/background.png';
+import backgroundColor from '../../assets/img/background.png';
 
 export const Backdrop = styled.div`
   height: 100vh;

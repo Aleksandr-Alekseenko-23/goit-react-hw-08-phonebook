@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const UsersApi = {
+export const ContactsApi = {
   async getContact() {
     const { data } = await axios.get('/contacts');
     return data;
