@@ -15,8 +15,8 @@ import {
 } from './Footer.styled.js';
 import { ReactComponent as LinkedIn } from '../../Assets/img/linkedin.svg';
 import { ReactComponent as Github } from '../../Assets/img/github.svg';
-import useMatchMedia from 'hooks/UseMatchMedia/Index';
-import useToggleModal from 'hooks/UseToggleModal/UseToggleModal';
+import useMatchMedia from '../../hooks/UseMatchMedia';
+import useToggleModal from '../../hooks/UseToggleModal';
 import Modal from '../Modal/Modal';
 import { ButtonCloseModal } from '../UpdateContactsForm/UpdateContactsForm.styled';
 import { Img } from '../Contacts/Contacs.styled';

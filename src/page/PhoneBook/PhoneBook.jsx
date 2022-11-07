@@ -9,8 +9,8 @@ import {
   BackButton,
   WrapperModal,
 } from './PhoneBook.styled.js';
-import useMatchMedia from 'hooks/UseMatchMedia/Index';
-import useToggleModal from 'hooks/UseToggleModal/UseToggleModal';
+import useMatchMedia from '../../hooks/UseMatchMedia';
+import useToggleModal from '../../hooks/UseToggleModal';
 import Modal from '../../components/Modal/Modal';
 
 export const PhoneBook = () => {

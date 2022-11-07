@@ -7,7 +7,7 @@ import { getToken } from 'redux/Auth/AuthSelectors';
 import { HeaderWrappen, Wrappen, Menu } from './AppBar.styled.js';
 import Logo from '../Logo/Logo';
 import Container from 'components/Container/Container.js';
-import useMatchMedia from 'hooks/UseMatchMedia/Index';
+import useMatchMedia from '../../hooks/UseMatchMedia';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 const AppBar = () => {

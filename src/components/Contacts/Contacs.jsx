@@ -29,7 +29,7 @@ import {
 import { getIsLoggetIn, getToken } from '../../redux/Auth/AuthSelectors';
 import Loader from 'components/Loader/Loader.jsx';
 import { UpdateContactsForm } from '../UpdateContactsForm/UpdateContactsForm';
-import useMatchMedia from 'hooks/UseMatchMedia/UseMatchMedia.js';
+import useMatchMedia from '../../hooks/UseMatchMedia';
 
 function Contacs() {
   const dispatch = useDispatch();

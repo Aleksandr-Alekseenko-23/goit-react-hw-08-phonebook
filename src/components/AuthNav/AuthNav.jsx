@@ -1,6 +1,6 @@
 import React from 'react';
 import { LinkHome, Item, List } from '../Navigation/Navigation.styled.js';
-import useMatchMedia from 'hooks/UseMatchMedia/Index';
+import useMatchMedia from '../../hooks/UseMatchMedia';
 import {
   MobMenuButton,
   appearDuration,

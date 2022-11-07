@@ -11,7 +11,7 @@ import {
   Button,
   ButtonImg,
 } from './FilterContactsForm.styled.js';
-import useMatchMedia from 'hooks/UseMatchMedia/Index';
+import useMatchMedia from '../../hooks/UseMatchMedia';
 import Icon from '../../Assets/img/plus.svg';
 
 function FilterContactsForm({ openModal }) {
