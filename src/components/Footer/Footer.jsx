@@ -36,7 +36,11 @@ function Footer() {
             <>
               <Wrapper>
                 Made by
-                <LinkGoIT href="https://goit.ua/">
+                <LinkGoIT
+                  href="https://goit.ua/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <LogoImg
                     src="https://goit.ua/wp-content/themes/2/images/Layer.png"
                     alt="логотип"
@@ -48,7 +52,12 @@ function Footer() {
               </Wrapper>
               <List>
                 <Item>
-                  <a className="Link" href="https://www.linkedin.com/feed/">
+                  <a
+                    className="Link"
+                    href="https://www.linkedin.com/feed/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <LinkedIn className="Logo" />
                   </a>
                 </Item>
@@ -56,6 +65,8 @@ function Footer() {
                   <a
                     className="Link"
                     href="https://github.com/Aleksandr-Alekseenko-23"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <Github className="Logo" />
                   </a>
