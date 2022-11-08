@@ -31,7 +31,7 @@ export const App = () => {
 
   useEffect(() => {
     if (pathname === '/') {
-      navigate('/contacts');
+      navigate('/login');
     }
   }, [navigate, pathname]);
 

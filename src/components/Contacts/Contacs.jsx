@@ -37,7 +37,7 @@ function Contacs() {
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
   const contacts = useSelector(getContactsState);
-  const userFilter = useSelector(getContactsFilter);
+  const searchContact = useSelector(getContactsFilter);
   const isLoggedIn = useSelector(getIsLoggetIn);
   const token = useSelector(getToken);
 
@@ -47,10 +47,12 @@ function Contacs() {
     token && isLoggedIn && dispatch(getContacts());
   }, [token, isLoggedIn, dispatch]);
 
-  const filterContactsFunction = () => {
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(userFilter.toLowerCase())
-    );
+  const sortAndFilterContactsFunction = () => {
+    return [...contacts]
+      .sort((a, b) => (a.name > b.name ? 1 : -1))
+      .filter(({ name }) =>
+        name.toLowerCase().includes(searchContact.toLowerCase())
+      );
   };
 
   const showUpdateForm = userId => {
@@ -72,7 +74,7 @@ function Contacs() {
             <>
               <Title>Contacts</Title>
               <List>
-                {filterContactsFunction().map(({ name, number, id }) => {
+                {sortAndFilterContactsFunction().map(({ name, number, id }) => {
                   return (
                     <Item key={id}>
                       <AvatarWrappen>
