@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -11,10 +11,17 @@ import {
   ButtonRegister,
   ErrorText,
   Wrraper,
+  ButtonVisibillity,
 } from './RegistrationForm.styled.js';
+import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(prev => !prev);
+  };
 
   const validationSchema = yup.object({
     name: yup
@@ -86,12 +93,23 @@ const RegistrationForm = () => {
           Password
           <Wrraper>
             <InputRegister
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password"
               value={formik.values.password}
               onChange={formik.handleChange}
               errors={formik.errors.password && formik.touched.password}
             />
+            <ButtonVisibillity
+              type="button"
+              onClick={handleClickShowPassword}
+              errors={formik.errors.password && formik.touched.password}
+            >
+              {!showPassword ? (
+                <MdVisibilityOff size={24} />
+              ) : (
+                <MdVisibility size={24} />
+              )}
+            </ButtonVisibillity>
             {formik.errors.password && formik.touched.password && (
               <ErrorText>{formik.errors.password}</ErrorText>
             )}

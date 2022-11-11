@@ -80,3 +80,13 @@ export const Wrraper = styled.div`
   flex-direction: column;
   position: relative;
 `;
+
+export const ButtonVisibillity = styled.button`
+  position: absolute;
+  right: 0;
+  top: 35%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: ${props => (props.errors ? '#d32f2f' : 'orange')};
+`;

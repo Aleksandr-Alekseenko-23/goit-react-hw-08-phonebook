@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { nanoid } from 'nanoid';
 import {
   FormPhoneBook,
   InputPhoneBook,
@@ -9,18 +10,35 @@ import {
 } from './AddContactsForm.styled.js';
 import Icon from './../../Assets/img/plus.svg';
 import { addContacts } from '../../redux/Contacts/ContactsOperations';
+import { getContactsState } from '../../redux/Contacts/ContactsSelectors';
 
 export const AddContactsForm = () => {
   const dispatch = useDispatch();
+  const contacts = useSelector(getContactsState);
+
+  const doubleCheckName = name => {
+    return contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+  };
+
+  const doubleCheckNumber = numberPhone => {
+    return contacts.find(contact => contact.number === numberPhone);
+  };
 
   const onHandleSubmit = e => {
     e.preventDefault();
     const { nameUser, number } = e.target.elements;
-    if (nameUser.value.trim() === '' || number.value.trim() === '') {
-      toast.error('Please enter contacts!');
-      return;
+    const name = nameUser.value.trim();
+    const numberPhone = number.value.trim();
+
+    if (name === '' || numberPhone === '') {
+      return toast.info('Please enter contacts!');
     }
-    dispatch(addContacts({ name: nameUser.value, number: number.value }));
+    if (doubleCheckName(name) && doubleCheckNumber(numberPhone)) {
+      return toast.info('Such contact exists!');
+    }
+    dispatch(addContacts({ id: nanoid(), name, number: numberPhone }));
     e.target.reset();
   };
 

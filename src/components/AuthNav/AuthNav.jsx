@@ -25,28 +25,30 @@ const AuthNav = ({ mobileMenuIsOpen, toggleMenu }) => {
           </Item>
         </List>
       ) : (
-        <MobMenuButton
-          type="button"
-          aria-label="burger-menu"
-          onClick={toggleMenu}
-        >
-          <CSSTransition
-            in={mobileMenuIsOpen}
-            timeout={appearDuration}
-            classNames={{
-              enterActive: 'exampleEnter',
-              enterDone: 'exampleEnterActive',
-              exitActive: 'exampleExit',
-              exitDone: 'exampleActive',
-            }}
+        <>
+          <MobMenuButton
+            type="button"
+            aria-label="burger-menu"
+            onClick={toggleMenu}
           >
-            {!mobileMenuIsOpen ? (
-              <MobHamburgerMenuClose color="white" size={24} />
-            ) : (
-              <MobMenuClose color="white" size={24} />
-            )}
-          </CSSTransition>
-        </MobMenuButton>
+            <CSSTransition
+              in={mobileMenuIsOpen}
+              timeout={appearDuration}
+              classNames={{
+                enterActive: 'exampleEnter',
+                enterDone: 'exampleEnterActive',
+                exitActive: 'exampleExit',
+                exitDone: 'exampleActive',
+              }}
+            >
+              {!mobileMenuIsOpen ? (
+                <MobHamburgerMenuClose color="white" size={24} />
+              ) : (
+                <MobMenuClose color="white" size={24} />
+              )}
+            </CSSTransition>
+          </MobMenuButton>
+        </>
       )}
     </>
   );
