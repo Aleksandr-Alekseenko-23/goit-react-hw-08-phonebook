@@ -4,7 +4,7 @@ import {
   getContactsFilter,
   getContactsState,
 } from '../../redux/Contacts/ContactsSelectors';
-import { filterContacts } from 'redux/Contacts/FiltersSlice.js';
+import { filterContacts } from 'redux/Contacts/ContactsSlice.js';
 import {
   InputPhoneBook,
   LabelPhoneBook,
