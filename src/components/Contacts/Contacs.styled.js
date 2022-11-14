@@ -2,16 +2,20 @@ import styled from 'styled-components';
 import { breakpoints } from '../Utils/Breakpoints';
 
 export const List = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  min-width: 290px;
-  max-height: 300px;
+  min-width: ${p => `${p.theme.space[5] * 9}px`};
+  max-height: ${p => `${p.theme.space[5] * 10}px`};
   overflow: auto;
-  background-color: white;
+  background-color: ${p => p.theme.colors.white};
 
   &::-webkit-scrollbar {
-    width: 12px; /* ширина всей полосы прокрутки */
+    width: 10px; /* ширина всей полосы прокрутки */
+    display: block;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      width: 20px; /* ширина всей полосы прокрутки */
+    }
   }
 
   &::-webkit-scrollbar-track {
@@ -28,98 +32,98 @@ export const List = styled.ul`
   scrollbar-color: orange white; /* цвет бегунка и зоны отслеживания */
 
   @media ${breakpoints.minTablet} {
-    max-width: 700px;
-    max-height: 300px;
+    max-width: ${p => `${p.theme.space[6] * 11}px`};
+    max-height: ${p => `${p.theme.space[5] * 10}px`};
   }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
-  gap: 15px;
+  gap: ${p => `${p.theme.space[4]}px`};
   flex-direction: column;
 `;
 
 export const Item = styled.li`
-  font-size: 12px;
-  color: orange;
   display: flex;
   align-items: center;
-  border-top: solid 1px orange;
-  padding: 5px;
+  font-size: ${p => p.theme.fontSizes.xs};
+  line-height: ${p => p.theme.lineHeights.text};
+  letter-spacing: ${p => p.theme.letterSpacing.m};
+  color: ${p => p.theme.colors.text.primaryText};
+  border-top: ${p => p.theme.borders.normal} orange;
+  padding-right: ${p => `${p.theme.space[2]}px`};
+  padding-left: ${p => `${p.theme.space[2]}px`};
+  height: ${p => `${p.theme.space[3] * 6}px`};
 
   &:last-child {
-    border-bottom: solid 1px orange;
+    border-bottom: ${p => p.theme.borders.normal} orange;
   }
   @media ${breakpoints.minTablet} {
-    font-size: 24px;
+    font-size: ${p => p.theme.fontSizes.xl};
   }
 `;
 
 export const Span = styled.span`
-  font-size: 12px;
-  color: orange;
-  width: 110px;
+  font-size: ${p => p.theme.fontSizes.xs};
+  color: ${p => p.theme.colors.text.primaryText};
+  width: ${p => `${p.theme.space[1] * 55}px`};
 
   @media ${breakpoints.minTablet} {
-    width: 250px;
-    font-size: 24px;
+    width: ${p => `${p.theme.space[8]}px`};
+    font-size: ${p => p.theme.fontSizes.xl};
   }
 `;
 
 export const Img = styled.img`
-  width: 15px;
+  width: ${p => `${p.theme.space[4]}px`};
 
   @media ${breakpoints.minTablet} {
-    width: 20px;
+    width: ${p => `${p.theme.space[4] * 5}px`};
   }
 `;
 
 export const ButtonDelete = styled.button`
-  width: 20px;
-  background-color: white;
-  padding: 0;
-  border-color: red;
-  cursor: pointer;
+  width: ${p => `${p.theme.space[2] * 5}px`};
+  background-color: ${p => p.theme.colors.white};
+  border-color: ${p => p.theme.colors.button.btnBorderRed};
 
   @media ${breakpoints.minTablet} {
-    width: 30px;
+    width: ${p => `${p.theme.space[2] * 6}px`};
   }
 `;
 
 export const ButtonEdit = styled(ButtonDelete)`
-  border-color: orange;
-  margin-right: 5px;
+  border-color: ${p => p.theme.colors.button.btnBorder};
+  margin-right: ${p => `${p.theme.space[2]}px`};
 `;
 
-export const AvatarWrappen = styled.div`
-  width: 20px;
+export const AvatarWrapper = styled.div`
+  width: ${p => `${p.theme.space[2] * 5}px`};
 
   @media ${breakpoints.minTablet} {
-    width: 50px;
+    width: ${p => `${p.theme.space[1] * 25}px`};
   }
 `;
 
 export const TextPib = styled.p`
-  width: 135px;
-  margin: 0;
+  width: ${p => `${p.theme.space[7]}px`};
 
   @media ${breakpoints.minTablet} {
-    width: 320px;
+    width: ${p => `${p.theme.space[5] * 10}px`};
   }
 `;
 
 export const Title = styled.h2`
-  color: white;
-  font-size: 18px;
-  font-weight: normal;
-  margin: 0;
+  color: ${p => p.theme.colors.text.secondaryText};
+  font-size: ${p => p.theme.fontSizes.l};
+  font-weight: ${p => p.theme.fontWeights.normal};
 
   @media ${breakpoints.minTablet} {
-    font-size: 24px;
+    font-size: ${p => p.theme.fontSizes.xl};
   }
 `;
 
 export const TitleContact = styled(Title)`
   text-align: center;
-  font-size: 24px;
+  font-size: ${p => p.theme.fontSizes.xl};
 `;

@@ -2,16 +2,16 @@ import React from 'react';
 import Logo from 'components/Logo/Logo';
 import Container from 'components/Container/Container';
 import {
-  FooterWrappen,
+  FooterWrapper,
   Wrapper,
   List,
   Item,
-  LogoWrappen,
-  LogoImg,
+  LogoWrapper,
   LinkGoIT,
   Button,
   WrapperMob,
   ListMob,
+  ButtonImg,
 } from './Footer.styled.js';
 import { ReactComponent as LinkedIn } from '../../Assets/img/linkedin.svg';
 import { ReactComponent as Github } from '../../Assets/img/github.svg';
@@ -19,7 +19,6 @@ import useMatchMedia from '../../hooks/UseMatchMedia';
 import useToggleModal from '../../hooks/UseToggleModal';
 import Modal from '../Modal/Modal';
 import { ButtonCloseModal } from '../UpdateContactsForm/UpdateContactsForm.styled';
-import { Img } from '../Contacts/Contacs.styled';
 import Close from '../../Assets/img/Delete.svg';
 
 function Footer() {
@@ -27,9 +26,9 @@ function Footer() {
   const { isFooterOpen, toggleFooterModal } = useToggleModal();
 
   return (
-    <FooterWrappen>
+    <FooterWrapper>
       <Container>
-        <LogoWrappen>
+        <LogoWrapper>
           <Logo />
 
           {!isMobile ? (
@@ -41,7 +40,7 @@ function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <LogoImg
+                  <img
                     src="https://goit.ua/wp-content/themes/2/images/Layer.png"
                     alt="логотип"
                     width="100"
@@ -81,7 +80,7 @@ function Footer() {
             <>
               <Modal>
                 <ButtonCloseModal type="button" onClick={toggleFooterModal}>
-                  <Img src={Close} alt="Close" />
+                  <ButtonImg src={Close} alt="Close" />
                 </ButtonCloseModal>
                 <WrapperMob>
                   Made by
@@ -90,7 +89,7 @@ function Footer() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <LogoImg
+                    <img
                       src="https://goit.ua/wp-content/themes/2/images/Layer.png"
                       alt="логотип"
                       width="100"
@@ -124,9 +123,9 @@ function Footer() {
               </Modal>
             </>
           )}
-        </LogoWrappen>
+        </LogoWrapper>
       </Container>
-    </FooterWrappen>
+    </FooterWrapper>
   );
 }
 

@@ -6,9 +6,9 @@ import {
 } from '../../redux/Contacts/ContactsSelectors';
 import { filterContacts } from 'redux/Contacts/ContactsSlice.js';
 import {
-  InputPhoneBook,
-  LabelPhoneBook,
-  Button,
+  InputFilter,
+  LabelFilter,
+  ButtonPlus,
   ButtonImg,
 } from './FilterContactsForm.styled.js';
 import useMatchMedia from '../../hooks/UseMatchMedia';
@@ -24,20 +24,20 @@ function FilterContactsForm({ openModal }) {
   return (
     <>
       {isMobile && (
-        <Button
+        <ButtonPlus
           onClick={() => {
             openModal();
           }}
           aria-label="open modal"
         >
           <ButtonImg src={Icon} alt="Plus" />
-        </Button>
+        </ButtonPlus>
       )}
       {contacts.length > 0 && (
         <>
-          <LabelPhoneBook>
+          <LabelFilter>
             Find contacts by name
-            <InputPhoneBook
+            <InputFilter
               type="text"
               name="filter"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -47,7 +47,7 @@ function FilterContactsForm({ openModal }) {
               onChange={handleFilterChange}
               placeholder="Name"
             />
-          </LabelPhoneBook>
+          </LabelFilter>
         </>
       )}
     </>

@@ -5,7 +5,7 @@ import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { logout } from 'redux/Auth/AuthOperations';
-import { ButtonLogout, Wrappen } from './UserMenu.styled.js';
+import { ButtonLogout, Wrapper } from './UserMenu.styled.js';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const UserMenu = () => {
   }));
 
   return (
-    <Wrappen>
+    <Wrapper>
       <Stack direction="row" spacing={2}>
         <StyledBadge
           overlap="circular"
@@ -53,7 +53,7 @@ const UserMenu = () => {
       <ButtonLogout type="button" onClick={() => dispatch(logout())}>
         Logout
       </ButtonLogout>
-    </Wrappen>
+    </Wrapper>
   );
 };
 

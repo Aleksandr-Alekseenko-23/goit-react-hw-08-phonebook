@@ -2,34 +2,39 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const LinkHome = styled(NavLink)`
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0px;
+  color: ${p => p.theme.colors.text.secondaryText};
+  font-size: ${p => p.theme.fontSizes.xl};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  margin: ${p => `${p.theme.space[0]}px`};
   list-style: none;
   text-decoration: none;
-  width: 100%;
+  display: block;
+  width: 100px;
+  height: 30px;
+  padding: ${p => `${p.theme.space[3]}px`};
+  text-align: center;
 
   &.active {
-    color: orange;
-  }
-
-  &:hover,
-  &:active {
-    color: orange;
+    color: ${p => p.theme.colors.text.primaryText};
   }
 `;
 
 export const Item = styled.li`
-  border: solid 1px white;
-  border-color: white;
-  border-radius: 5%;
-  padding: 10px;
   cursor: pointer;
+  border: ${p => p.theme.borders.normal} transparent;
+  border-radius: ${p => p.theme.radii.md};
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:active {
+    border-color: ${p => p.theme.colors.button.btnBorderWhite};
+  }
 `;
 
 export const List = styled.ul`
   display: flex;
-  gap: 30px;
-  padding: 0;
+  gap: ${p => `${p.theme.space[6]}px`};
 `;

@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-export const HeaderWrappen = styled.header`
-  border-bottom: 1px solid rgba(236, 236, 236, 1);
+export const HeaderWrapper = styled.header`
+  height: 75px;
+  border-bottom: ${p => p.theme.borders.normal} rgba(236, 236, 236, 1);
 `;
 
-export const Wrappen = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 `;
 

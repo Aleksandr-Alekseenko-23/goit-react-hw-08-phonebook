@@ -8,8 +8,10 @@ import {
   FormInput,
   ButtonSaveUpdate,
   ButtonCloseModal,
+  ButtonImg,
+  ButtonIcon,
 } from './UpdateContactsForm.styled';
-import { Img } from 'components/Contacts/Contacs.styled';
+
 import Icon from '../../Assets/img/plus.svg';
 import Close from '../../Assets/img/Delete.svg';
 
@@ -65,7 +67,7 @@ export const UpdateContactsForm = ({ contactToUpdate, closeForm }) => {
     <Backdrop onClick={handleBackdropClick}>
       <FormModal onSubmit={handleSubmit}>
         <ButtonCloseModal type="button" onClick={closeForm}>
-          <Img src={Close} alt="Close" />
+          <ButtonImg src={Close} alt="Close" width="32" />
         </ButtonCloseModal>
         <FormLabel>
           Contact name
@@ -88,7 +90,7 @@ export const UpdateContactsForm = ({ contactToUpdate, closeForm }) => {
           />
         </FormLabel>
         <ButtonSaveUpdate type="submit">
-          <img src={Icon} alt="Plus" />
+          <ButtonIcon src={Icon} alt="Plus" />
         </ButtonSaveUpdate>
       </FormModal>
     </Backdrop>

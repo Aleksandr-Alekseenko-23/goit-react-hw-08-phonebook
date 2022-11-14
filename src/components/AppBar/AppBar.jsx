@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import AuthNav from 'components/AuthNav/AuthNav';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { getToken } from 'redux/Auth/AuthSelectors';
-import { HeaderWrappen, Wrappen, Menu } from './AppBar.styled.js';
+import { HeaderWrapper, Wrapper, Menu } from './AppBar.styled.js';
 import Logo from '../Logo/Logo';
 import Container from 'components/Container/Container.js';
 import useMatchMedia from '../../hooks/UseMatchMedia';
@@ -25,9 +25,9 @@ const AppBar = () => {
   };
 
   return (
-    <HeaderWrappen>
+    <HeaderWrapper>
       <Container>
-        <Wrappen>
+        <Wrapper>
           <Logo />
           {!isMobile && <Navigation />}
           {!token ? (
@@ -38,7 +38,7 @@ const AppBar = () => {
           ) : (
             <UserMenu />
           )}
-        </Wrappen>
+        </Wrapper>
       </Container>
 
       {isMobile && mobileMenuIsOpen && (
@@ -49,7 +49,7 @@ const AppBar = () => {
           />
         </Menu>
       )}
-    </HeaderWrappen>
+    </HeaderWrapper>
   );
 };
 

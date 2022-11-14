@@ -18,23 +18,16 @@ export const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Gotham Pro';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.2;
-  text-transform: uppercase;
-  height: 32px;
-  margin-bottom: 20px;
-  color: rgba(155, 159, 170, 1);
-
+  font-family: ${p => p.theme.fonts.gotham};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  font-size: ${p => p.theme.fontSizes.xl};
+  line-height: ${p => p.theme.lineHeights.text};
+  text-transform: ${p => p.theme.textTransform.upCase};
+  height: ${p => `${p.theme.space[5]}px`};
+  margin-bottom: ${p => `${p.theme.space[4]}px`};
+  color: ${p => p.theme.colors.text.linkText};
   text-decoration: none;
   &.active {
-    color: rgba(255, 255, 255, 1);
+    color: ${p => p.theme.colors.text.secondaryText};
   }
-`;
-
-export const List = styled.ul`
-  padding: 0;
-  margin: 0;
 `;

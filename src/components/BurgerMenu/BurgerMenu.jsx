@@ -1,5 +1,5 @@
 import React from 'react';
-import { Backdrop, Main, StyledNavLink, List } from './BurgerMenu.styled';
+import { Backdrop, Main, StyledNavLink } from './BurgerMenu.styled';
 
 const BurgerMenu = ({ toggleMenu, mobileMenuIsOpen }) => {
   const handleBackdropClick = e => {
@@ -10,7 +10,7 @@ const BurgerMenu = ({ toggleMenu, mobileMenuIsOpen }) => {
   return (
     <Backdrop onClick={handleBackdropClick} timeout={3000}>
       <Main>
-        <List>
+        <ul>
           <StyledNavLink
             to="register"
             onClick={() => {
@@ -23,7 +23,7 @@ const BurgerMenu = ({ toggleMenu, mobileMenuIsOpen }) => {
           <StyledNavLink to="login" onClick={toggleMenu}>
             Sign in
           </StyledNavLink>
-        </List>
+        </ul>
       </Main>
     </Backdrop>
   );

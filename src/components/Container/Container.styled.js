@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { breakpoints } from '../Utils/Breakpoints';
 
 export const Wrapper = styled.div`
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: ${p => `${p.theme.space[4]}px`};
+  padding-right: ${p => `${p.theme.space[4]}px`};
   @media ${breakpoints.mobile} {
-    min-width: 290px;
+    min-width: ${p => `${p.theme.space[5] * 9}px`};
   }
 `;

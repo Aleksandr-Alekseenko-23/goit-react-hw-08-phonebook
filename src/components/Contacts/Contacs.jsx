@@ -9,7 +9,7 @@ import {
   ButtonDelete,
   ButtonEdit,
   Img,
-  AvatarWrappen,
+  AvatarWrapper,
   TextPib,
   Title,
   TitleContact,
@@ -77,13 +77,13 @@ function Contacs() {
                 {sortAndFilterContactsFunction().map(({ name, number, id }) => {
                   return (
                     <Item key={id}>
-                      <AvatarWrappen>
+                      <AvatarWrapper>
                         {isMobile ? (
                           <Avatar size="15" name={name} round={true} />
                         ) : (
                           <Avatar size="25" name={name} round={true} />
                         )}
-                      </AvatarWrappen>
+                      </AvatarWrapper>
                       <TextPib> {name}</TextPib>
                       <Span>{number}</Span>
                       <ButtonEdit

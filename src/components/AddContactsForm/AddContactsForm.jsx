@@ -6,6 +6,7 @@ import {
   InputPhoneBook,
   LabelPhoneBook,
   Button,
+  ButtonIcon,
   Wrapper,
 } from './AddContactsForm.styled.js';
 import Icon from './../../Assets/img/plus.svg';
@@ -67,7 +68,7 @@ export const AddContactsForm = () => {
         </LabelPhoneBook>
       </Wrapper>
       <Button type="submit">
-        <img src={Icon} alt="Plus" />
+        <ButtonIcon src={Icon} alt="Plus" />
       </Button>
     </FormPhoneBook>
   );

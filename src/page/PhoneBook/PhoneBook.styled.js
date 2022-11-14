@@ -2,18 +2,19 @@ import styled from 'styled-components';
 import { breakpoints } from '../../components/Utils/Breakpoints';
 
 export const TitleOne = styled.h1`
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
+  font-size: ${p => p.theme.fontSizes.xxl};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  line-height: ${p => p.theme.lineHeights.sectionTitle};
+  letter-spacing: ${p => p.theme.letterSpacing.l};
+  color: ${p => p.theme.colors.text.secondaryText};
   text-align: center;
-  margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: ${p => `${p.theme.space[3]}px`};
   @media ${breakpoints.minTablet} {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: ${p => p.theme.fontSizes.xxxl};
+    margin-bottom: ${p => `${p.theme.space[4]}px`};
   }
   @media ${breakpoints.desktop} {
-    font-size: 72px;
+    font-size: ${p => p.theme.fontSizes.title};
   }
 `;
 
@@ -25,7 +26,6 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
   }
-
   @media ${breakpoints.desktop} {
     justify-content: space-around;
   }
@@ -39,8 +39,8 @@ export const WrapperContact = styled.div`
 export const BackButton = styled.button`
   display: flex;
   align-items: center;
-  border: none;
-  background-color: transparent;
+  border: ${p => p.theme.borders.none};
+  background-color: ${p => p.theme.colors.transparent};
 `;
 
 export const WrapperModal = styled.div`

@@ -4,7 +4,7 @@ import { breakpoints } from '../Utils/Breakpoints';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: ${p => `${p.theme.space[3]}px`};
   justify-content: center;
   align-items: center;
 
@@ -15,54 +15,67 @@ export const Wrapper = styled.div`
 
 export const FormPhoneBook = styled.form`
   display: flex;
-  gap: 30px;
+  gap: ${p => `${p.theme.space[5]}px`};
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 `;
 
 export const InputPhoneBook = styled.input`
-  background-color: white;
-  min-width: 308px;
-  height: 35px;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  color: orange;
-  padding-left: 10px;
+  background-color: ${p => p.theme.colors.white};
+  min-width: ${p => `${p.theme.space[2] * 77}px`};
+  height: ${p => `${p.theme.space[3] * 6}px`};
+  border: ${p => p.theme.borders.none};
+  outline: ${p => p.theme.borders.none};
+  font-size: ${p => p.theme.fontSizes.l};
+  line-height: ${p => p.theme.lineHeights.text};
+  letter-spacing: ${p => p.theme.letterSpacing.m};
+  color: ${p => p.theme.colors.text.primaryText};
+  padding-left: ${p => `${p.theme.space[3]}px`};
 
   &::placeholder {
-    font-size: 24px;
-    color: orange;
+    font-size: ${p => p.theme.fontSizes.xl};
+    line-height: ${p => p.theme.lineHeights.text};
+    letter-spacing: ${p => p.theme.letterSpacing.m};
+    color: ${p => p.theme.colors.text.primaryText};
   }
   @media ${breakpoints.minTablet} {
-    width: 323px;
-    padding-left: 20px;
-    font-size: 24px;
+    width: ${p => `${p.theme.space[5] * 10}px`};
+    padding-left: ${p => `${p.theme.space[4]}px`};
+    font-size: ${p => p.theme.fontSizes.xl};
+    line-height: ${p => p.theme.lineHeights.text};
+    letter-spacing: ${p => p.theme.letterSpacing.l};
   }
   @media ${breakpoints.desktop} {
-    width: 448px;
+    width: ${p => `${p.theme.space[6] * 7}px`};
   }
 `;
 
 export const LabelPhoneBook = styled.label`
   display: flex;
-  gap: 15px;
+  gap: ${p => `${p.theme.space[4]}px`};
   flex-direction: column;
 
-  color: white;
-  font-size: 24px;
+  color: ${p => p.theme.colors.text.secondaryText};
+  font-size: ${p => p.theme.fontSizes.xl};
+  line-height: ${p => p.theme.lineHeights.text};
+  letter-spacing: ${p => p.theme.letterSpacing.l};
 `;
 
 export const Button = styled.button`
-  background-color: rgba(28, 28, 28, 0);
-  border-color: orange;
-  cursor: pointer;
-  padding: 0;
-  width: 70px;
-  height: 70px;
+  background-color: ${p => p.theme.colors.button.primaryBtnBackground};
+  border-color: ${p => p.theme.colors.button.btnBorder};
+  width: ${p => `${p.theme.space[6]}px`};
+  height: ${p => `${p.theme.space[6]}px`};
   @media ${breakpoints.desktop} {
-    width: 100px;
-    height: 100px;
+    width: ${p => `${p.theme.space[5] * 3}px`};
+    height: ${p => `${p.theme.space[5] * 3}px`};
+  }
+`;
+
+export const ButtonIcon = styled.img`
+  @media ${breakpoints.desktop} {
+    width: ${p => `${p.theme.space[5] * 3}px`};
+    height: ${p => `${p.theme.space[5] * 3}px`};
   }
 `;

@@ -6,8 +6,8 @@ export const appearDuration = 300;
 
 export const MobMenuButton = styled.button`
   margin-left: auto;
-  background-color: transparent;
-  border: none;
+  background-color: ${p => p.theme.colors.button.primaryBtnBackground};
+  border: ${p => p.theme.borders.none};
 `;
 
 export const MobMenuClose = styled(TfiClose)`

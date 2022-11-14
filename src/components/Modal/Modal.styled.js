@@ -3,16 +3,16 @@ import { breakpoints } from '../Utils/Breakpoints';
 import backgroundColor from '../../Assets/img/background.png';
 
 export const ModalBackdrop = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(${backgroundColor});
   position: fixed;
   top: 40px;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url(${backgroundColor});
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const ModalContent = styled.div`
